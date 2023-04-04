@@ -1,0 +1,46 @@
+/*---------------header-------------*/
+.contact-list {
+  display: flex;
+  gap: 40px;
+}
+/*---------------hero-------------*/
+.section-main {
+  padding-top: 188px;
+  padding-bottom: 188px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../image/people-office.jpg);
+  max-width: 1440px;
+  height: 600px;
+}
+/* @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .section-main {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../image/index/mobile-hero-img@2x.jpg);
+    }
+  } */
+
+/*---------------section-first-------------*/
+.first-item {
+  width: 264px;
+}
+.caption-three {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.paragraf {
+  font-weight: 400;
+}
+
+/*---------------footer-------------*/
+.section-footer {
+  margin-right: 120px;
+}
+.section-footer-social {
+  margin-right: 80px;
+}
