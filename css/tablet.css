@@ -12,6 +12,7 @@
   --color-corn-flower: #e7e9fc;
   --main-font: Roboto, sans-serif;
   --secondary-font: Raleway, sans-serif;
+  --trasition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   background-color: var(--color-width);
@@ -128,16 +129,60 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  /* position: relative; */
   display: block;
+  padding: 0 2px;
   padding-top: 24px;
   padding-bottom: 24px;
 }
 .current {
   color: var(--color-ocean);
+
+  /* faine animation 👇 */
+
+  position: relative;
+  overflow: hidden;
+  width: 52px;
+  height: 72px;
+  background: transparent;
+  border-radius: 2px;
 }
-.header-link.current::after {
-  content: "";
+.current::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  background-image: linear-gradient(
+    180deg,
+    var(--color-green),
+    var(--color-ocean)
+  );
+  width: 25px;
+  height: 130%;
+  animation: rotateO 3s linear infinite;
+  transition: all var(--trasition);
+  z-index: -2;
+}
+
+@keyframes rotateO {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  background: var(--color-width);
+  border-radius: 2px;
+  inset: 3px;
+  z-index: -1;
+}
+/* .header-link.current::after {
+  content: '';
   position: absolute;
   width: 100%;
   height: 4px;
@@ -145,7 +190,7 @@ a {
   left: 0;
   bottom: 0;
   border-radius: 2px;
-}
+} */
 
 .header-link:hover,
 .header-link:focus {
@@ -452,7 +497,7 @@ a {
   height: 40px;
 }
 .footer-logo {
-  font-family: "Raleway";
+  font-family: 'Raleway';
   font-weight: 800;
   font-size: 18px;
   line-height: 1.33;
@@ -808,7 +853,7 @@ a {
   line-height: 1.17;
 }
 .check-text::before {
-  content: "";
+  content: '';
   width: 16px;
   height: 16px;
   border: 1.25px solid var(--color-navy-blue);
